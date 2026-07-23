@@ -55,7 +55,9 @@ void inicializar_laberinto(int laberinto[FILAS][COLUMNAS]) {
 
 /* Imprime el laberinto en pantalla */
 void mostrar_laberinto(int laberinto[FILAS][COLUMNAS], Coordenada jugador, Coordenada inicio, Coordenada fin) {
-    system("cls || clear"); // Limpia la pantalla en Windows/Linux
+    // Secuencia ANSI para limpiar pantalla y mover el cursor al inicio
+    printf("\033[H\033[J"); 
+
     for (int i = 0; i < FILAS; i++) {
         for (int j = 0; j < COLUMNAS; j++) {
             if (i == jugador.x && j == jugador.y) {
